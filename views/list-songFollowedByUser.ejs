@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <%-include("partials/navbar", {page : 'Songs that you followed'})%>
+
+  <table border="1" width="0" >
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+    </tr>
+    <% songs.Songs.forEach(element =>{ %>
+      <tr>
+        <td> <%= element.title %> </td>
+        <td> <%= element.artist%> </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <%-include("partials/navbar", {page : 'Song List'})%>
+  <table border="1" width="0" >
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Action</th>
+    </tr>
+    <% songs.forEach(element =>{ %>
+      <tr>
+        <td> <%= element.title %> </td>
+        <td> <%= element.artist%> </td>
+        <td> <a href="/songs/delete/<%=element.id%>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+              <a href="/songs/follow/<%=element.id%>">Follow</a>
+             <a href="/songs/showSongFollowers/<%=element.id %>" >Followers</a> 
+            </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>
